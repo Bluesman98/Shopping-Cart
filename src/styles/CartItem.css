@@ -1,0 +1,20 @@
+.CartItem{
+    display: flex;
+    width: 100%;
+}
+.CartItem>div{
+   width: 7%;
+}
+
+.CartItem>div:last-child{
+    width: 10%;
+ }
+
+.quantity{
+    display: flex;
+}
+
+.price{
+    margin-left: auto;
+    padding-bottom: .5rem;
+}

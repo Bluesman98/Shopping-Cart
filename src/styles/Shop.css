@@ -1,0 +1,53 @@
+.Shop{
+    display: grid;
+    grid-template-columns:1.5fr 10fr ;
+    background-color: #e5e7eb;
+}
+
+.Shop>.sidebar{
+    grid-column: 1/2;
+    background-color: #e5e7eb;
+}
+
+.Shop>.sidebar>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:.3rem;
+    font-size: .8rem;
+    padding: 1rem;
+}
+
+.Shop>.main{
+    grid-column: 2/3;
+}
+
+.Shop>.sidebar>div>li{
+   cursor: pointer;
+   list-style-type: none;
+   padding-bottom: 0.2rem;
+   border-bottom: 0.1rem solid #e5e7eb;
+   display: flex;
+   padding: .2rem;
+   padding-left: .5rem;
+}
+.Shop>.sidebar>div>div{
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    padding-left: .5rem;
+}
+
+.Shop>.sidebar>div>li:hover{
+    border-bottom: 0.1rem solid;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+}
+
+.current{
+    border-bottom: 0.1rem solid !important;
+    color: black;
+    font-weight: bold;
+}

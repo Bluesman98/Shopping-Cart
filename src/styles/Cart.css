@@ -1,0 +1,13 @@
+.top{
+    display: flex;
+}
+
+.top>div:last-child{
+    margin-left: auto;
+    width: 10%;
+}
+
+.bottom>div{
+    margin-left: auto;
+    width: 10%;
+}
