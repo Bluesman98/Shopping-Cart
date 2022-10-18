@@ -39,7 +39,7 @@ function Home() {
         animate="visible"
         transition={{ duration: 1 }}
       >
-        <img src="tolkien.svg" />
+        <img  src={process.env.PUBLIC_URL+"/tolkien.svg"} />
         <div className="box">
           <div>Welcome to Tolkien Book Shop</div>
           <motion.div
