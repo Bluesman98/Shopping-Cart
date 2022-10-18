@@ -1,13 +1,40 @@
-.top{
-    display: flex;
+.Cart {
+  padding: 0 15%;
+  background-color: #e5e7eb;
 }
 
-.top>div:last-child{
-    margin-left: auto;
-    width: 10%;
+.top {
+  padding: 0.7rem;
+  display: grid;
+  grid-template-columns: 5fr 1.5fr 1.5fr;
 }
 
-.bottom>div{
-    margin-left: auto;
-    width: 10%;
+.bottom {
+  padding: 0.7rem;
+  display: grid;
+  grid-template-columns: 5fr 1.5fr 1.5fr;
+}
+
+.bottom > div:first-child {
+  display: flex;
+  justify-content: end;
+}
+
+.bottom > div:last-child {
+  font-size: 1.5rem;
+}
+
+.bottom > * button {
+  align-self: center;
+  width: 15rem;
+  font-size: 1rem;
+  border-radius: 3px;
+  border: none;
+  padding: 0.3rem 0.4rem;
+  background-color: #22c55ee1;
+}
+
+.bottom > * button:hover {
+  cursor: pointer;
+  background-color: #16a34a;
 }

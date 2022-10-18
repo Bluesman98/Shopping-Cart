@@ -1,63 +1,64 @@
-.Item{  
+.Item {
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   background-color: white;
   font-size: 0.7rem;
-  padding:10%;
+  padding: 10%;
+  height: 27rem;
+  max-width: 17rem;
 }
 
-
-
-.Item>div:first-child{
+.Item > div:first-child {
   height: 70%;
   display: flex;
   justify-content: center;
 }
 
-.Item>div:last-child{
-  display:flex;
+.Item > div:last-child {
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 30%;
   padding-top: 0.5rem;
 }
 
-.name{
+.name {
   font-size: 0.8rem;
   font-weight: bold;
-  padding-bottom: .2rem;
+  padding-bottom: 0.2rem;
 }
 
-.series{
+.series {
   color: #52525b;
   font-style: italic;
 }
 
-.price{
+.price {
   margin-top: auto;
   font-size: 1rem;
   font-weight: bold;
+  margin-left: auto;
+  margin-bottom: 0.5rem;
 }
 
-.Item>div>button{
+.Item > div > button {
   font-size: 1rem;
   font-weight: 600;
   background-color: black;
   color: white;
-  border:none;
+  border: none;
   border-radius: 4.5px;
   align-self: center;
   width: 100%;
-  padding: .2rem;
+  padding: 0.2rem;
 }
 
-.Item>div>button:hover{
+.Item > div > button:hover {
   cursor: pointer;
-  background-color: #262626;
+  background-color: #4a4949;
 }
 
-.Item>div>img{
+.Item > div > img {
   border-radius: 3px;
-    width: 100%;
-    height: 95%;
+  height: 95%;
 }

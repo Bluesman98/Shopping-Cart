@@ -1,7 +1,7 @@
-.Browse{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 0.2fr));
-    gap: 2rem;
-    padding: 2rem;
+.Browse {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 0.8rem;
+  padding: 2rem;
+  flex: 1;
 }
-

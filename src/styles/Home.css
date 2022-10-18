@@ -1,0 +1,72 @@
+.Home {
+  display: flex;
+  justify-content: center;
+  background-image: url("../../public/wallpaper.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: contain;
+  font-size: 1.7rem;
+  height: 100%;
+}
+
+.Home > * img {
+  height: 8rem;
+  color: white;
+  margin-right: 2rem;
+}
+
+.box {
+  background-color: rgba(59, 58, 58, 0.606);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+  border-radius: 3px;
+  margin-top: 4rem;
+}
+
+.Home > div {
+  display: flex;
+  align-items: flex-end;
+  width: fit-content;
+  height: fit-content;
+  color: white;
+}
+
+.box > div:first-child {
+  padding-right: 3rem;
+  padding-left: 1.5rem;
+}
+
+.box > div + div {
+  display: flex;
+  width: 100%;
+  text-decoration: none;
+}
+
+.Home > * a {
+  display: flex;
+  width: 100%;
+  text-decoration: none;
+}
+
+.Home > * button {
+  font-size: 1.5rem;
+  padding: 0.2rem 1rem;
+  margin-top: 1.5rem;
+  margin-left: auto;
+  background-color: #27272a;
+  color: white;
+  border: none;
+  border-radius: 2px;
+}
+
+.Home > * button:hover {
+  cursor: pointer;
+  background-color: #232222;
+}

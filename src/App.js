@@ -1,5 +1,6 @@
+import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, Link } from "react-router-dom";
 import Cart from "./components/Cart";
 import CartModal from "./components/CartModal";
 import Home from "./components/Home";
@@ -8,9 +9,8 @@ import data from "./data/data";
 
 import "./styles/App.css";
 function App() {
+  const [items, setItems] = useState(data());
 
-  const [items, setItems] = useState(data())
-  
   const [cart, setCart] = useState([]);
 
   function addToCart(item) {
@@ -66,12 +66,12 @@ function App() {
     });
   }
 
-  function cartTotal(){
-    let sum = 0
-    cart.map((item)=>{
-      sum+=item.price*item.quantity
-    })
-    return sum
+  function cartTotal() {
+    let sum = 0;
+    cart.map((item) => {
+      sum += item.price * item.quantity;
+    });
+    return sum;
   }
 
   const [isOpen, setIsOpen] = useState(false);
@@ -82,7 +82,6 @@ function App() {
       !e.target.closest(".CartModalItem") &&
       e.target !== document.querySelector(".cart")
     ) {
-      console.log("close");
       setIsOpen(false);
       window.removeEventListener("click", close);
     }
@@ -106,33 +105,49 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <div className="header">
-            <div className="cartDiv">
-              <div>{counter}</div>
-              <i className="fa-solid fa-cart-shopping cart"  onClick={handlemodal}></i>
-            </div>
-          <CartModal
-            open={isOpen}
-            cart={cart}
-            remove={removeFromCart}
-            quantity={changeQuantity}
-            total={cartTotal}
-          />
+          <div className="nav">
+            <Link to="/home">Home</Link>
+            <Link to="/shop">Shop</Link>
+          </div>
+          <div className="cartDiv">
+            <div>{counter}</div>
+            <i
+              className="fa-solid fa-cart-shopping cart"
+              onClick={handlemodal}
+            ></i>
+          </div>
+          <AnimatePresence>
+            {isOpen && (
+              <CartModal
+                open={isOpen}
+                cart={cart}
+                remove={removeFromCart}
+                quantity={changeQuantity}
+                total={cartTotal}
+                modalOpen={setIsOpen}
+              />
+            )}
+          </AnimatePresence>
         </div>
         <Routes>
-          <Route path="/" element={<Navigate to="/shop" />} />
+          <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
           <Route
             path="/shop"
+            element={<Shop items={items} cart={cart} add={addToCart} />}
+          />
+          <Route
+            path="/cart"
             element={
-              <Shop
-                items={items}
+              <Cart
                 cart={cart}
-                add={addToCart}
+                quantity={changeQuantity}
+                total={cartTotal}
                 remove={removeFromCart}
+                modalOpen={setIsOpen}
               />
             }
           />
-          <Route path="/cart" element={<Cart cart={cart} quantity={changeQuantity} total={cartTotal}/>} />
         </Routes>
       </div>
     </BrowserRouter>
