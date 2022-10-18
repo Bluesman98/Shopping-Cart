@@ -46,7 +46,7 @@ function CartModal(props) {
         <div className="cart-empty">
           <div>Your Cart Is Empty</div>
           <i className="fa-solid fa-cart-shopping"></i>
-          <Link to="/shop">
+          <Link to={process.env.PUBLIC_URL + "/shop"}>
             <button
               onClick={() => {
                 props.modalOpen(false);
@@ -68,7 +68,7 @@ function CartModal(props) {
       transition={{ duration: 0.5 }}
     >
       <div className="view-cart">
-        <Link to="/cart">
+        <Link to={process.env.PUBLIC_URL + "/cart"}>
           <button>Cart & Checkout</button>
         </Link>
         <div>{props.total().toFixed(2)} $</div>

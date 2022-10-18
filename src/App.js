@@ -106,8 +106,8 @@ function App() {
       <div className="App">
         <div className="header">
           <div className="nav">
-            <Link to="/home">Home</Link>
-            <Link to="/shop">Shop</Link>
+            <Link to={process.env.PUBLIC_URL + "/home"}>Home</Link>
+            <Link to={process.env.PUBLIC_URL + "/shop"}>Shop</Link>
           </div>
           <div className="cartDiv">
             <div>{counter}</div>
@@ -130,14 +130,14 @@ function App() {
           </AnimatePresence>
         </div>
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="/home" element={<Home />} />
+          <Route path={process.env.PUBLIC_URL + "/"} element={<Navigate to={process.env.PUBLIC_URL + "/home"} />} />
+          <Route path={process.env.PUBLIC_URL + "/home"} element={<Home />} />
           <Route
-            path="/shop"
+            path={process.env.PUBLIC_URL + "/shop"}
             element={<Shop items={items} cart={cart} add={addToCart} />}
           />
           <Route
-            path="/cart"
+            path={process.env.PUBLIC_URL + "/cart"}
             element={
               <Cart
                 cart={cart}

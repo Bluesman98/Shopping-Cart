@@ -48,7 +48,7 @@ function Home() {
             animate="visible"
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <Link to="/shop">
+            <Link to={process.env.PUBLIC_URL + "/shop"}>
               <button>Visit The Store</button>
             </Link>
           </motion.div>
